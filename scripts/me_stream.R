@@ -1,6 +1,7 @@
 #socrata link
 library(tidyverse)
 library(lubridate)
+library(googlesheets4)
 require(RSocrata)
 
 medical_examiner <- read.socrata("https://datacatalog.cookcountyil.gov/resource/xswi-76cy.json")
@@ -43,4 +44,11 @@ gun_death_group <- gun_death_2017_2018 %>% group_by(race, manner, gender)
 
 gun_death_group %>% summarize(n = n())
 
-write_rds(gun_death_2017_2018, "rds/gun_deaths_2017.RDS")
+##
+clerks_data <- read_sheet("https://docs.google.com/spreadsheets/d/1WcxXhJB4jdi9T4W01_lxD9nZvH6vppUxsHz5zGwSb_w/edit#gid=1335163552")
+
+##
+data <- list(gun_death_2017_2018, clerks_data)
+write_rds(data, "rds/data.RDS")
+
+

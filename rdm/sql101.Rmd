@@ -1,0 +1,72 @@
+---
+title: "Getting Comfortable with Data"
+subtitle: "<br/>SQL 101"
+author: "Martin Gleason, MS"
+institute: "Cook County Juvenile Court"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: ["default", "presentations2.css", "presentations2-fonts.css"]
+    lib_dir: libs
+    nature:
+      beforeInit: "macros.js"
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```{r loadscripts, echo=FALSE, message=FALSE, warning=FALSE}
+library(here)
+library(kableExtra)
+data_source <- here("scripts/data_excercises.R")
+source(data_source)
+
+```
+#Learning Objectives
+
+* Become familiar with tidy data principles.
+
+* Develop a basic understanding of SQL and what is used for.
+
+* Learn how field work becomes data work.
+
+---
+# insert icebreaker here 
+
+---
+# What is tidy data?
+.center[![](../img/clean_up.gif)]
+
+---
+# Tidy Data Principles
+.pull-left[
+### Academic Terms
+1. Each variable is atomic 
+
+2. Each variable forms a column
+
+3. Each observation froms a row
+
+4. Each type of observational unit forms a table
+]
+.pull-right[
+### Real Life Examples
+1. Seperating first and last names
+
+2. First Name Column, DOB Colums
+
+3. Martin, Gleason, 7/14/197
+
+4. Birthday Table
+]
+
+.footnote[Source: [Hadley Wickham's Paper](https://vita.had.co.nz/papers/tidy-data.pdf)]
+
+---
+# Excercise #1: Tidy This Table
+```{r clerks_table, echo = FALSE}
+
+clerks[1:20, 1:4] %>% 
+  kable() %>%
+  kable_styling(bootstrap_options= c("responsive","striped")) %>% 
+  scroll_box(width = "100%", height = "75%")
+```
