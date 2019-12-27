@@ -70,3 +70,54 @@ clerks[1:20, 1:4] %>%
   kable_styling(bootstrap_options= c("responsive","striped")) %>% 
   scroll_box(width = "100%", height = "75%")
 ```
+
+---
+# Excercise #1 Results
+
+.pull-left[
+1. Each variable is atomic 
+
+2. Each variable forms a column
+
+3. Each observation froms a row
+
+4. Each type of observational unit forms a table
+]
+
+.pull-right[
+1. Names are not atomic
+
+2. Missing First Name, Last Name
+
+3. More than one "observation"
+
+4. It is one table. Should it be?
+]
+
+---
+# Database vs Spreadsheet: 
+##Compltely Oversimplified
+
+.pull-left[
+* **Spreadsheets:**
+Collect and track whatever you want however you want.
+
+* **Database:**
+Stricter rules about what can go where, but faster AND it tracks relationships
+]
+
+.pull-right[
+![](../img/making_progress.png)
+]
+---
+# Excercise 2: Bike Stores
+.pull-left[![:scale 110%](../img/SQL-Server-Sample-Database.png)]
+.pull-right[
+**Think of tracking a bike purchase using a spreadsheet:**
+
+  * Customer info
+  * Store order
+  * What they orderd
+  * Delivery method
+  * Making a return
+]
