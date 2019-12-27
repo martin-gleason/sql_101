@@ -109,6 +109,7 @@ Stricter rules about what can go where, but faster AND it tracks relationships
 .pull-right[
 ![](../img/making_progress.png)
 ]
+
 ---
 # Excercise 2: Bike Stores
 .pull-left[![:scale 110%](../img/SQL-Server-Sample-Database.png)]
