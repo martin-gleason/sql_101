@@ -48,7 +48,7 @@ gun_death_group %>% summarize(n = n())
 clerks_data <- read_sheet("https://docs.google.com/spreadsheets/d/1WcxXhJB4jdi9T4W01_lxD9nZvH6vppUxsHz5zGwSb_w/edit#gid=1335163552")
 
 ##
-data <- list(gun_death_2017_2018, clerks_data)
+data <- list(gun_death_2017_2018, clerks_data, me_original)
 write_rds(data, "rds/data.RDS")
 
 

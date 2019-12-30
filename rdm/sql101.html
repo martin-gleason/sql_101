@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
-    <title>Getting Comfortable with Data</title>
+    <title>Getting Comfortable with Data and Databases</title>
     <meta charset="utf-8" />
     <meta name="author" content="Martin Gleason, MS" />
-    <meta name="date" content="2019-12-26" />
+    <meta name="date" content="2019-12-30" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <script src="libs/kePrint-0.0.1/kePrint.js"></script>
     <link rel="stylesheet" href="presentations2.css" type="text/css" />
@@ -14,11 +14,11 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Getting Comfortable with Data
+# Getting Comfortable with Data and Databases
 ## <br/>SQL 101
 ### Martin Gleason, MS
 ### Cook County Juvenile Court
-### 2019-12-26
+### 2019-12-30
 
 ---
 
@@ -32,8 +32,26 @@ class: center, middle, inverse, title-slide
 * Learn how field work becomes data work.
 
 ---
-# insert icebreaker here 
+# Grounding and Icebreaker
+.pull-left[
+*On the card in front of you write the following:*
+  * Name
+  
+  * Extension
+  
+  * What you want out of this training?
+  
+  * Spotify, iTunes, or analog
+  
+  * Favorite social network
+    * Facebook, twitter, tumblr, instagram, reddit, other...
+]
 
+.v-middle[.pull-right[![](../img/youcandoit.gif)]]
+
+---
+## Step 2: Sort this data!
+.center[![](../img/oatt.jpg)]
 ---
 # What is tidy data?
 .center[![](../img/clean_up.gif)]
@@ -46,15 +64,15 @@ class: center, middle, inverse, title-slide
 
 2. Each variable forms a column
 
-3. Each observation froms a row
+3. Each observation forms a row
 
 4. Each type of observational unit forms a table
 ]
 .pull-right[
 ### Real Life Examples
-1. Seperating first and last names
+1. Separating first and last names
 
-2. First Name Column, DOB Colums
+2. First Name Column, DOB Columns
 
 3. Martin, Gleason, 7/14/197
 
@@ -64,7 +82,7 @@ class: center, middle, inverse, title-slide
 .footnote[Source: [Hadley Wickham's Paper](https://vita.had.co.nz/papers/tidy-data.pdf)]
 
 ---
-# Excercise #1: Tidy This Table
+# Exercise #1: Tidy This Table
 &lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:75%; overflow-x: scroll; width:100%; "&gt;&lt;table class="table table-responsive table-striped" style="margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -199,14 +217,14 @@ class: center, middle, inverse, title-slide
 &lt;/table&gt;&lt;/div&gt;
 
 ---
-# Excercise #1 Results
+# Exercise #1 Results
 
 .pull-left[
 1. Each variable is atomic 
 
 2. Each variable forms a column
 
-3. Each observation froms a row
+3. Each observation forms a row
 
 4. Each type of observational unit forms a table
 ]
@@ -223,14 +241,15 @@ class: center, middle, inverse, title-slide
 
 ---
 # Database vs Spreadsheet: 
-##Compltely Oversimplified
+##Completely Oversimplified
 
 .pull-left[
-* **Spreadsheets:**
-Collect and track whatever you want however you want.
+  * **Spreadsheets:**
+    * Collect and track whatever you want however you want.
 
 * **Database:**
-Stricter rules about what can go where, but faster AND it tracks relationships
+    * Stricter rules about what can go where and how it is displayed. 
+    * Scalability
 ]
 
 .pull-right[
@@ -238,19 +257,118 @@ Stricter rules about what can go where, but faster AND it tracks relationships
 ]
 
 ---
-# Excercise 2: Bike Stores
+# Exercise 2: Think Like A Spreadsheet
 .pull-left[![:scale 110%](../img/SQL-Server-Sample-Database.png)]
 .pull-right[
-**Think of tracking a bike purchase using a spreadsheet:**
+**As a group, make a spreadsheet that tracks:**
 
   * Customer info
   * Store order
-  * What they orderd
+  * What they ordered
   * Delivery method
   * Making a return
 ]
 
+???
+use note cards and sticky notes
 ---
+
+#Databases and SQL: A Little Bit of Theory
+
+  * [Databases are built on Set Theory](https://medium.com/basecs/set-theory-the-method-to-database-madness-5ec4b4f05d79)
+
+  * Tidy principles are a simplification of normalization
+
+    * Deconstructing relationships to their most basic elements
+
+ 
+  * Structured Query Language was created in 1970 by IBM
+  
+  * There are many flavors of SQL for working with a variety of database products
+  
+---
+
+# Database Products
+
+  * Oracle: **MySQL**, Oracle Database
+
+  * Microsoft: Access, **Microsoft SQL Server**
+  
+  * PostgreSQL Global Development Group: **PostgreSQL**
+  
+  * SQLite Consortium: **SQLite**
+  
+  * IBM: DB2
+  
+  * SAP: SAP Sybase
+
+---
+
+# Database Products
+
+  * MySQL: Hugely popular for websites, free, and used by a number of online learning companies because it is ubiquitous.
+  
+  * SQL Server: Hugely popular with companies who use Microsoft products. 
+    * What JEMS used and cFive WILL use
+  
+  * PostgreSQL: Free, fast, and well supported by a community of developers
+  
+  * SQLite: Free, popular for tablets/phones. 
+    * Use a single file structure where other products use multiple, interlinked files
+  
+---
+
+# Database vs Database Administration
+
+.pull-left[
+  * Rules, logins, who can access what data: Database Administration
+    * Uses command line or a graphic user interface
+    * Is not always a SQL command
+    
+  * Loading, Accessing, Transforming, and Manipulating Data
+    * This is done by SQL
+    
+]
+
+.pull-right[
+Microsoft SQL Server Studio
+![:scale 150%](../img/msgui.jpg)
+]
+
+---
+# Bonus Slide: By Command Line
+
+![:scale 125%](../img/postgres_con.png)
+
+---
+# Break Time
+.center[![](../img/break.gif)]
+
+---
+# Recap: What We Learned So Far
+
+--
+  * Spreadsheets and databases are different tools for data collection and analysis
+  
+--
+  
+  * Tidy data is a way to store data to make processing it easier
+
+--
+
+  * Tidy data is a simplification of normalizing databases
+
+--
+
+  * Structured Query Langauge (SQL) is used for a number of database products. 
+
+--
+  
+  * Database Administration is about more than running queries.
+
+---
+# Notes about the data set
+![](../img/ccme.png)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
