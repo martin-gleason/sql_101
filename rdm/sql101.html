@@ -4,11 +4,11 @@
     <title>Getting Comfortable with Data and Databases</title>
     <meta charset="utf-8" />
     <meta name="author" content="Martin Gleason, MS" />
-    <meta name="date" content="2019-12-30" />
+    <meta name="date" content="2020-01-02" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <script src="libs/kePrint-0.0.1/kePrint.js"></script>
-    <link rel="stylesheet" href="presentations2.css" type="text/css" />
     <link rel="stylesheet" href="presentations2-fonts.css" type="text/css" />
+    <link rel="stylesheet" href="presentations2.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -18,18 +18,20 @@ class: center, middle, inverse, title-slide
 ## <br/>SQL 101
 ### Martin Gleason, MS
 ### Cook County Juvenile Court
-### 2019-12-30
+### 2020-01-02
 
 ---
 
 
 #Learning Objectives
 
+* Learn how field work becomes data work.
+
 * Become familiar with tidy data principles.
 
 * Develop a basic understanding of SQL and what is used for.
 
-* Learn how field work becomes data work.
+* Learn where to continue studying SQL and Database Administration
 
 ---
 # Grounding and Icebreaker
@@ -306,14 +308,14 @@ use note cards and sticky notes
 
 # Database Products
 
-  * MySQL: Hugely popular for websites, free, and used by a number of online learning companies because it is ubiquitous.
+  * **MySQL:** Hugely popular for websites, free, and used by a number of online learning companies because it is ubiquitous.
   
-  * SQL Server: Hugely popular with companies who use Microsoft products. 
-    * What JEMS used and cFive WILL use
+  * **SQL Server:** Hugely popular with companies who use Microsoft products. 
+    * What `JEMS` used and `cFive` WILL use
   
-  * PostgreSQL: Free, fast, and well supported by a community of developers
+  * **PostgreSQL:** Free, fast, and well supported by a community of developers
   
-  * SQLite: Free, popular for tablets/phones. 
+  * **SQLite:** Free, popular for tablets/phones. 
     * Use a single file structure where other products use multiple, interlinked files
   
 ---
@@ -345,7 +347,7 @@ Microsoft SQL Server Studio
 .center[![](../img/break.gif)]
 
 ---
-# Recap: What We Learned So Far
+#What We Learned So Far
 
 --
   * Spreadsheets and databases are different tools for data collection and analysis
@@ -368,7 +370,129 @@ Microsoft SQL Server Studio
 
 ---
 # Notes about the data set
-![](../img/ccme.png)
+.pull-left[![](../img/ccme.png)]
+
+.pull-right[
+  * Far from an ideal data set
+
+  * We use mortality rates as a key performance indicator
+  
+  * This data is publically available, which means we can use it and manipluate without fear of violating confidentiality
+  
+  * Tracking this data can help us develop interventions to prevent these fatalities
+]
+???
+- criminal violence
+- suicide
+- accident
+- suddenly when in apparent good condition
+- unattended by a practicing licensed physician
+- suspicious or unusual circumstances
+- criminal abortion
+- poisoning or attributable to an adverse reaction to drugs and/or alcohol
+- disease constituting a threat to public health
+- injury or toxic agent resulting from employment
+- during some medical diagnostic or therapeutic procedures
+- in any prison or penal institution
+- when involuntarily confined in jail, prison hospitals or other institutions or in police custody
+- when any human body is to be cremated, dissected or buried at sea
+- when a dead body is brought into a new medico-legal jurisdiction without proper medical certification
+
+---
+#Dataset Facts
+
+
+  * **Total Number of Records:** ``32,731``
+  
+  * **Earliest Case:** ``Tuesday, May 25, 1948``
+  
+  * **Latest Case:** ``Sunday, December 29, 2019, 10:54:00 PM``
+  
+  * **Average Age:** ``51.4207937``
+  
+  * **Number of Factors:** ``27`
+
+???
+List of factors: ``casenumber, incident_date, death_date, age, gender, race, latino, manner, primarycause, gunrelated, opioids, incident_street, longitude, latitude, objectid, location.type, location.coordinates, cold_related, heat_related, residence_zip, incident_zip, secondarycause, primarycause_lineb, primarycause_linec, residence_city, incident_city, source``
+  
+---
+&lt;table class="table table-responsive table-striped" style="margin-left: auto; margin-right: auto;"&gt;
+&lt;caption&gt;Top 10 Causes of Death in Cook County: 1940-2020 &lt;br&gt;&lt;br&gt;
+&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Primary Cause &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Count &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ORGANIC CARDIOVASCULAR DISEASE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3,213 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MULTIPLE GUNSHOT WOUNDS &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,929 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HYPERTENSIVE CARDIOVASCULAR DISEASE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,729 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; MULTIPLE INJURIES &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,314 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HYPERTENSIVE ARTERIOSCLEROTIC CARDIOVASCULAR DISEASE &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1,165 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+---
+#Excercise #3: Getting Data into any System
+
+--
+  * Forms
+
+--
+
+  * Computer to Computer
+    * XML
+    * JSON
+--
+
+  * Uploading
+    * XML
+    * JSON
+    * CSV
+    * Excel
+
+---
+#cFive: How it Fits In
+
+.img-center[![](../img/form.png)
+
+]
+---
+#cFive: How it Fits In
+
+.img-center[![](../img/form_results.png)
+
+]
+---
+#Resources and Further Learning
+  
+  * [Medium](https://medium.com/better-programming/absolute-beginners-guide-to-sql-601aad53f6c9)
+
+  * [Codeacademy](https://www.codecademy.com/learn/learn-sql)
+    * Free version is fine
+  
+  * [Linux Academy](https://linuxacademy.com/course/database-administration-and-sql-language-basics/)
+    * Free version is fine
+  
+  * [Free Code Camp](https://guide.freecodecamp.org/sql/)
+  
+  * [Amazon Relational Database Services](https://aws.amazon.com/rds/)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

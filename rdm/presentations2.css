@@ -3,16 +3,6 @@
 @import url('https://fonts.googleapis.com/css?family=Nobile|Lato');
 
 
-:root{
-	--blue: #193993;
-  --grey: #9b9292;
-  --black: #0e0705;
-  --green: #a5d3c1;
-  --gold: #eebf48;
-}
-
-
-
 body{
 	background-color: #a5d3c1;
 }
@@ -21,6 +11,12 @@ body{
 .title-slide{
 	background-color: var(--black);
 	}
+
+caption{
+	color: var(--blue);
+	font-weight: bold;
+	font-size: 1.5em;
+}
 
 
 div.my-header {
@@ -60,4 +56,15 @@ div.my-header {
 }
 
 .v-middle{
-	vertical-align: middle;}
+	vertical-align: middle;
+	}
+	
+.img-center{
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 65%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%)
+
+}

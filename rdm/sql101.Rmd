@@ -6,7 +6,7 @@ institute: "Cook County Juvenile Court"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
-    css: ["default", "presentations2.css", "presentations2-fonts.css"]
+    css: ["default", "presentations2-fonts.css", "presentations2.css"]
     lib_dir: libs
     nature:
       beforeInit: "macros.js"
@@ -23,11 +23,13 @@ source(data_source)
 ```
 #Learning Objectives
 
+* Learn how field work becomes data work.
+
 * Become familiar with tidy data principles.
 
 * Develop a basic understanding of SQL and what is used for.
 
-* Learn how field work becomes data work.
+* Learn where to continue studying SQL and Database Administration
 
 ---
 # Grounding and Icebreaker
@@ -84,7 +86,7 @@ source(data_source)
 ```{r clerks_table, echo = FALSE}
 
 clerks[1:20, 1:4] %>% 
-  kable() %>%
+  kable(cation = "Clerks Training Data from OCS") %>%
   kable_styling(bootstrap_options= c("responsive","striped")) %>% 
   scroll_box(width = "100%", height = "75%")
 ```
@@ -179,14 +181,14 @@ use note cards and sticky notes
 
 # Database Products
 
-  * MySQL: Hugely popular for websites, free, and used by a number of online learning companies because it is ubiquitous.
+  * **MySQL:** Hugely popular for websites, free, and used by a number of online learning companies because it is ubiquitous.
   
-  * SQL Server: Hugely popular with companies who use Microsoft products. 
-    * What JEMS used and cFive WILL use
+  * **SQL Server:** Hugely popular with companies who use Microsoft products. 
+    * What `JEMS` used and `cFive` WILL use
   
-  * PostgreSQL: Free, fast, and well supported by a community of developers
+  * **PostgreSQL:** Free, fast, and well supported by a community of developers
   
-  * SQLite: Free, popular for tablets/phones. 
+  * **SQLite:** Free, popular for tablets/phones. 
     * Use a single file structure where other products use multiple, interlinked files
   
 ---
@@ -252,11 +254,111 @@ Microsoft SQL Server Studio
   
   * Tracking this data can help us develop interventions to prevent these fatalities
 ]
+???
+- criminal violence
+- suicide
+- accident
+- suddenly when in apparent good condition
+- unattended by a practicing licensed physician
+- suspicious or unusual circumstances
+- criminal abortion
+- poisoning or attributable to an adverse reaction to drugs and/or alcohol
+- disease constituting a threat to public health
+- injury or toxic agent resulting from employment
+- during some medical diagnostic or therapeutic procedures
+- in any prison or penal institution
+- when involuntarily confined in jail, prison hospitals or other institutions or in police custody
+- when any human body is to be cremated, dissected or buried at sea
+- when a dead body is brought into a new medico-legal jurisdiction without proper medical certification
 
 ---
+#Dataset Facts
 ```{r me, echo=FALSE, message=FALSE}
-library(RSocrata)
-#medical_examiner <- read.socrata("https://datacatalog.cookcountyil.gov/resource/xswi-76cy.json")
+total <- nrow(me_full)
+earliest <- min(me_full$incident_date)
+latest <- max(me_full$incident_date)
 
-
+manner <- me_full %>%
+  group_by(manner) %>%
+  summarise(Count = n()) %>%
+  arrange(desc(Count)) %>%
+  rename(`Manner of Death` = manner)
 ```
+
+  * **Total Number of Records:** ```r format(total, big.mark =",")```
+  
+  * **Earliest Case:** ```r format(earliest, "%A, %B %d, %Y")```
+  
+  * **Latest Case:** ```r format(latest, "%A, %B %d, %Y, %r")```
+  
+  * **Average Age:** ```r mean(as.numeric(me_full$age), na.rm = TRUE)```
+  
+  * **Number of Factors:** ```r ncol(me_full)``
+
+???
+List of factors: ```r names(me_full)```
+  
+---
+```{r top5, echo = FALSE, message = FALSE}
+
+me_full %>% 
+  group_by(primarycause) %>% 
+  summarize(Count = n()) %>%
+  rename("Primary Cause" = primarycause) %>%
+  mutate(Count = format(Count, big.mark = ",")) %>%
+  arrange(desc(Count)) %>% top_n(5) %>%
+  kable(caption = "Top 10 Causes of Death in Cook County: 1940-2020 <br><br>", 
+        format = "html", escape = FALSE) %>%
+  kable_styling(bootstrap_options= c("responsive","striped"), 
+                position = "center")
+```
+---
+#Excercise #3: Getting Data into any System
+
+--
+  * Forms
+
+--
+
+  * Computer to Computer
+    * XML
+    * JSON
+--
+
+  * Uploading
+    * XML
+    * JSON
+    * CSV
+    * Excel
+
+---
+#cFive: How it Fits In
+
+.img-center[![](../img/form.png)
+
+]
+---
+#cFive: How it Fits In
+
+.img-center[![](../img/form_results.png)
+
+]
+---
+#Resources and Further Learning
+  
+  * [Medium](https://medium.com/better-programming/absolute-beginners-guide-to-sql-601aad53f6c9)
+
+  * [Codeacademy](https://www.codecademy.com/learn/learn-sql)
+    * Free version is fine
+  
+  * [Linux Academy](https://linuxacademy.com/course/database-administration-and-sql-language-basics/)
+    * Free version is fine
+  
+  * [Free Code Camp](https://guide.freecodecamp.org/sql/)
+  
+  * [Amazon Relational Database Services](https://aws.amazon.com/rds/)
+  
+  
+
+
+
