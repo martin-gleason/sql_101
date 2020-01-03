@@ -344,6 +344,60 @@ me_full %>%
 
 ]
 ---
+#Database operations: CRUD
+
+.pull-left[
+**C**reate <br>
+
+**R**ead <br>
+
+**U**pdate <br>
+
+**D**elete <br>
+]
+.pull-right[.center[
+![](../img/r2d2.gif)
+]]
+
+???
+* Create: Entries, tables, databases
+* Read: Read data
+* Update: Change entires, tables, databases
+* Delete: Remove entires, tables, 
+
+---
+# SQL Demo: Who wants to volunteer?
+
+  * Log into the server
+  
+  * Perform CRUD Operations
+    * Create some data
+    * Read some data
+    * Update some data
+    * Delete a lot of data
+
+---
+# Take a break
+.img-center[
+![](../img/take5.gif)
+]
+---
+# Connecting to the Database:
+![:scale 2000%](../img/clidb.png)
+
+  * Box One: How to Connect
+  
+  * Box Two: Host Server
+  
+  * Box Three: Port
+
+  * Box Four: Username and Password
+
+???
+A port is the address to a specific kind of computer software. It's a communication endpoint -- where a variety of network traffic can/shoudl go.
+
+MS SQL uses port 1433. Webdsites are usually 80. 
+---
 #Resources and Further Learning
   
   * [Medium](https://medium.com/better-programming/absolute-beginners-guide-to-sql-601aad53f6c9)
@@ -357,8 +411,4 @@ me_full %>%
   * [Free Code Camp](https://guide.freecodecamp.org/sql/)
   
   * [Amazon Relational Database Services](https://aws.amazon.com/rds/)
-  
-  
-
-
 
