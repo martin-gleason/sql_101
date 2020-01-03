@@ -378,7 +378,7 @@ me_full %>%
 
 ---
 # Take a break
-.img-center[
+[.v-middle
 ![](../img/take5.gif)
 ]
 ---
