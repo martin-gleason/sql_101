@@ -44,7 +44,7 @@ source(data_source)
   * Spotify, iTunes, or analog
   
   * Favorite social network
-    * Facebook, twitter, tumblr, instagram, reddit, other...
+    * Facebook, twitter, tumblr, instagram, Reddit, other...
 ]
 
 .v-middle[.pull-right[![](../img/youcandoit.gif)]]
@@ -235,7 +235,7 @@ Microsoft SQL Server Studio
 
 --
 
-  * Structured Query Langauge (SQL) is used for a number of database products. 
+  * Structured Query Language (SQL) is used for a number of database products. 
 
 --
   
@@ -250,7 +250,7 @@ Microsoft SQL Server Studio
 
   * We use mortality rates as a key performance indicator
   
-  * This data is publically available, which means we can use it and manipluate without fear of violating confidentiality
+  * This data is publicly available, which means we can use it and manipulate without fear of violating confidentiality
   
   * Tracking this data can help us develop interventions to prevent these fatalities
 ]
@@ -273,7 +273,7 @@ Microsoft SQL Server Studio
 - when a dead body is brought into a new medico-legal jurisdiction without proper medical certification
 
 ---
-#Dataset Facts
+#Data set Facts
 ```{r me, echo=FALSE, message=FALSE}
 total <- nrow(me_full)
 earliest <- min(me_full$incident_date)
@@ -324,7 +324,7 @@ me_full %>%
                 position = "center")
 ```
 ---
-#Excercise #3: Getting Data into any System
+#Exercise #3: Getting Data into any System
 
 --
   * Forms
@@ -373,8 +373,8 @@ me_full %>%
 ???
 * Create: Entries, tables, databases
 * Read: Read data
-* Update: Change entires, tables, databases
-* Delete: Remove entires, tables, 
+* Update: Change entries, tables, databases
+* Delete: Remove entries, tables, 
 
 ---
 # SQL Demo: Who wants to volunteer?
@@ -406,9 +406,9 @@ me_full %>%
   * Box Four: Username and Password
 
 ???
-A port is the address to a specific kind of computer software. It's a communication endpoint -- where a variety of network traffic can/shoudl go.
+A port is the address to a specific kind of computer software. It's a communication endpoint -- where a variety of network traffic can/should go.
 
-MS SQL uses port 1433. Webdsites are usually 80. 
+MS SQL uses port 1433. Websites are usually 80. 
 
 ---
 #Create
@@ -434,7 +434,7 @@ MS SQL uses port 1433. Webdsites are usually 80.
 
 * **Datatypes:** Int, char, varchar, date, geospatial
 
-* **Constraints:** Keys, Can be Null, Autoupdating...
+* **Constraints:** Keys, Can be Null, Auto-updating...
 
 * **Logical Operators:** >, <, >=, <=, !, AND, OR, NOT
 ---
