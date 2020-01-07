@@ -54,3 +54,8 @@ ul,ol,dl,p{
 	font-size: 1.5rem;
 	text-align: left;
 }
+
+.highlight{
+	background-color: var(--gold);
+	border-radius: 5px;
+}

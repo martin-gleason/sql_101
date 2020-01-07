@@ -217,7 +217,7 @@ Microsoft SQL Server Studio
 
 ---
 # Break Time
-.center[![](../img/break.gif)]
+.img-center-solo[![](../img/break.gif)]
 
 ---
 #What We Learned So Far
@@ -254,6 +254,7 @@ Microsoft SQL Server Studio
   
   * Tracking this data can help us develop interventions to prevent these fatalities
 ]
+
 ???
 - criminal violence
 - suicide
@@ -284,21 +285,31 @@ manner <- me_full %>%
   arrange(desc(Count)) %>%
   rename(`Manner of Death` = manner)
 ```
+  
+.pull-left[
+* **Total Number of Records:** `r format(total, big.mark =",")`
 
-  * **Total Number of Records:** ```r format(total, big.mark =",")```
-  
-  * **Earliest Case:** ```r format(earliest, "%A, %B %d, %Y")```
-  
-  * **Latest Case:** ```r format(latest, "%A, %B %d, %Y, %r")```
-  
-  * **Average Age:** ```r mean(as.numeric(me_full$age), na.rm = TRUE)```
-  
-  * **Number of Factors:** ```r ncol(me_full)``
+* **Earliest Case:** `r format(earliest, "%A, %B %d, %Y")` 
 
-???
-List of factors: ```r names(me_full)```
-  
+* **Latest Case:** `r format(latest, "%A, %B %d, %Y, %r")` 
+
+* **Average Age:** `r round(mean(as.numeric(me_full$age), na.rm = TRUE))` 
+
+* **Number of Factors:** `r ncol(me_full)` 
+]
+
+.pull-right[
+```{r manner, echo = FALSE, message = FALSE}
+
+manner %>%
+  kable(caption = "Manner of Death Totals", format = "html") %>%
+  kable_styling(bootstrap_options= c("responsive","striped"), 
+                position = "center")
+
+```
+]
 ---
+
 ```{r top5, echo = FALSE, message = FALSE}
 
 me_full %>% 
@@ -334,13 +345,13 @@ me_full %>%
 ---
 #cFive: How it Fits In
 
-.img-center[![](../img/form.png)
+.img-center-solo[![](../img/form.png)
 
 ]
 ---
 #cFive: How it Fits In
 
-.img-center[![](../img/form_results.png)
+.img-center-solo[![](../img/form_results.png)
 
 ]
 ---
@@ -378,7 +389,8 @@ me_full %>%
 
 ---
 # Take a break
-[.v-middle
+
+.img-center-solo[
 ![](../img/take5.gif)
 ]
 ---
@@ -397,6 +409,102 @@ me_full %>%
 A port is the address to a specific kind of computer software. It's a communication endpoint -- where a variety of network traffic can/shoudl go.
 
 MS SQL uses port 1433. Webdsites are usually 80. 
+
+---
+#Create
+
+.img-center-solo[
+![](../img/create_table.gif)]
+
+---
+#Create
+
+* Create a table with the names of everyone in today's training
+
+.highlight[
+`CREATE TABLE x (` <br>
+    `column1name datatype constraints,` <br>
+    `column2name datatype constraints);` <br>
+    
+]
+
+--
+
+* **Verbs:** CREATE, SELECT, INSERT INTO, DROP, DELETE
+
+* **Datatypes:** Int, char, varchar, date, geospatial
+
+* **Constraints:** Keys, Can be Null, Autoupdating...
+
+* **Logical Operators:** >, <, >=, <=, !, AND, OR, NOT
+---
+#Read Tables
+
+.img-center-solo[
+![](../img/read_Table.gif)
+]
+---
+
+#Read
+* Reading a table usually involves the SELECT verb
+
+.highlight[
+     * `SELECT records FROM database;`
+]
+
+--
+* WHERE 
+  * `SELECT * FROM table`
+.highlight[WHERE]`   column >= value;`
+
+--
+* Logical Operators 
+
+`SELECT  table1.column1, table1.column2,` <br> `table2.column2,table3.column3 `
+`FROM table1, table2 ` <br>
+`WHERE table1.column1 = table2.column2` <br>
+.highlight[AND]  `table2.column3 = value;`
+
+---
+
+#Update
+
+.img-center-solo[
+![](../img/altertable.gif)
+]
+---
+
+#Update
+
+* Update means altering(adding or subtracting from) the table OR inserting data into the
+table <br>
+
+--
+.highlight[`INSERT INTO`] 
+`users` 
+.highlight[`VALUES`] `('var1a', 'var1b'), ('var2a', 'var2b'), ('var3a', 'var3b');`
+
+--
+
+.highlight[`ALTER`] `TABLE table ADD column datatype constraints`;
+
+---
+#Delete
+.img-center-solo[![](../img/droptable.gif)]
+
+---
+#Delete
+
+*Drop is used to delete tables and columns 
+
+--
+.highlight[`DROP`] `TABLE tablename;`
+
+--
+*Delete is used to delete specific rows (records)
+
+.highlight[`DELETE`] `FROM table WHERE column = value`
+
 ---
 #Resources and Further Learning
   

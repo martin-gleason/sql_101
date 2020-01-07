@@ -68,3 +68,13 @@ div.my-header {
 	transform: translate(-50%, -50%)
 
 }
+
+.img-center-solo{
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 55%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%)
+
+}

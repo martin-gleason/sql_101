@@ -4,7 +4,7 @@
     <title>Getting Comfortable with Data and Databases</title>
     <meta charset="utf-8" />
     <meta name="author" content="Martin Gleason, MS" />
-    <meta name="date" content="2020-01-03" />
+    <meta name="date" content="2020-01-07" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <script src="libs/kePrint-0.0.1/kePrint.js"></script>
     <link rel="stylesheet" href="presentations2-fonts.css" type="text/css" />
@@ -18,7 +18,7 @@ class: center, middle, inverse, title-slide
 ## <br/>SQL 101
 ### Martin Gleason, MS
 ### Cook County Juvenile Court
-### 2020-01-03
+### 2020-01-07
 
 ---
 
@@ -344,7 +344,7 @@ Microsoft SQL Server Studio
 
 ---
 # Break Time
-.center[![](../img/break.gif)]
+.img-center-solo[![](../img/break.gif)]
 
 ---
 #What We Learned So Far
@@ -381,6 +381,7 @@ Microsoft SQL Server Studio
   
   * Tracking this data can help us develop interventions to prevent these fatalities
 ]
+
 ???
 - criminal violence
 - suicide
@@ -401,21 +402,62 @@ Microsoft SQL Server Studio
 ---
 #Dataset Facts
 
+  
+.pull-left[
+* **Total Number of Records:** 32,731
 
-  * **Total Number of Records:** ``32,731``
-  
-  * **Earliest Case:** ``Tuesday, May 25, 1948``
-  
-  * **Latest Case:** ``Sunday, December 29, 2019, 10:54:00 PM``
-  
-  * **Average Age:** ``51.4207937``
-  
-  * **Number of Factors:** ``27`
+* **Earliest Case:** Tuesday, May 25, 1948 
 
-???
-List of factors: ``casenumber, incident_date, death_date, age, gender, race, latino, manner, primarycause, gunrelated, opioids, incident_street, longitude, latitude, objectid, location.type, location.coordinates, cold_related, heat_related, residence_zip, incident_zip, secondarycause, primarycause_lineb, primarycause_linec, residence_city, incident_city, source``
-  
+* **Latest Case:** Sunday, December 29, 2019, 10:54:00 PM 
+
+* **Average Age:** 51 
+
+* **Number of Factors:** 27 
+]
+
+.pull-right[
+&lt;table class="table table-responsive table-striped" style="margin-left: auto; margin-right: auto;"&gt;
+&lt;caption&gt;Manner of Death Totals&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Manner of Death &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Count &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; NATURAL &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12952 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; ACCIDENT &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 11637 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; HOMICIDE &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4026 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SUICIDE &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2509 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; UNDETERMINED &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 762 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; PENDING &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 590 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 255 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
 ---
+
 &lt;table class="table table-responsive table-striped" style="margin-left: auto; margin-right: auto;"&gt;
 &lt;caption&gt;Top 10 Causes of Death in Cook County: 1940-2020 &lt;br&gt;&lt;br&gt;
 &lt;/caption&gt;
@@ -470,13 +512,13 @@ List of factors: ``casenumber, incident_date, death_date, age, gender, race, lat
 ---
 #cFive: How it Fits In
 
-.img-center[![](../img/form.png)
+.img-center-solo[![](../img/form.png)
 
 ]
 ---
 #cFive: How it Fits In
 
-.img-center[![](../img/form_results.png)
+.img-center-solo[![](../img/form_results.png)
 
 ]
 ---
@@ -514,7 +556,8 @@ List of factors: ``casenumber, incident_date, death_date, age, gender, race, lat
 
 ---
 # Take a break
-[.v-middle
+
+.img-center-solo[
 ![](../img/take5.gif)
 ]
 ---
@@ -533,6 +576,102 @@ List of factors: ``casenumber, incident_date, death_date, age, gender, race, lat
 A port is the address to a specific kind of computer software. It's a communication endpoint -- where a variety of network traffic can/shoudl go.
 
 MS SQL uses port 1433. Webdsites are usually 80. 
+
+---
+#Create
+
+.img-center-solo[
+![](../img/create_table.gif)]
+
+---
+#Create
+
+* Create a table with the names of everyone in today's training
+
+.highlight[
+`CREATE TABLE x (` &lt;br&gt;
+    `column1name datatype constraints,` &lt;br&gt;
+    `column2name datatype constraints);` &lt;br&gt;
+    
+]
+
+--
+
+* **Verbs:** CREATE, SELECT, INSERT INTO, DROP, DELETE
+
+* **Datatypes:** Int, char, varchar, date, geospatial
+
+* **Constraints:** Keys, Can be Null, Autoupdating...
+
+* **Logical Operators:** &gt;, &lt;, &gt;=, &lt;=, !, AND, OR, NOT
+---
+#Read Tables
+
+.img-center-solo[
+![](../img/read_Table.gif)
+]
+---
+
+#Read
+* Reading a table usually involves the SELECT verb
+
+.highlight[
+     * `SELECT records FROM database;`
+]
+
+--
+* WHERE 
+  * `SELECT * FROM table`
+.highlight[WHERE]`   column &gt;= value;`
+
+--
+* Logical Operators 
+
+`SELECT  table1.column1, table1.column2,` &lt;br&gt; `table2.column2,table3.column3 `
+`FROM table1, table2 ` &lt;br&gt;
+`WHERE table1.column1 = table2.column2` &lt;br&gt;
+.highlight[AND]  `table2.column3 = value;`
+
+---
+
+#Update
+
+.img-center-solo[
+![](../img/altertable.gif)
+]
+---
+
+#Update
+
+* Update means altering(adding or subtracting from) the table OR inserting data into the
+table &lt;br&gt;
+
+--
+.highlight[`INSERT INTO`] 
+`users` 
+.highlight[`VALUES`] `('var1a', 'var1b'), ('var2a', 'var2b'), ('var3a', 'var3b');`
+
+--
+
+.highlight[`ALTER`] `TABLE table ADD column datatype constraints`;
+
+---
+#Delete
+.img-center-solo[![](../img/droptable.gif)]
+
+---
+#Delete
+
+*Drop is used to delete tables and columns 
+
+--
+.highlight[`DROP`] `TABLE tablename;`
+
+--
+*Delete is used to delete specific rows (records)
+
+.highlight[`DELETE`] `FROM table WHERE column = value`
+
 ---
 #Resources and Further Learning
   
