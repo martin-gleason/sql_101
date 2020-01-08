@@ -436,7 +436,7 @@ MS SQL uses port 1433. Websites are usually 80.
 
 * **Constraints:** Keys, Can be Null, Auto-updating...
 
-* **Logical Operators:** >, <, >=, <=, !, AND, OR, NOT
+* **Logical Operators:** `>, <, >=, <=, !, AND, OR, NOT`
 ---
 #Read Tables
 
@@ -497,13 +497,13 @@ table <br>
 ---
 #Delete
 
-  * Drop is used to delete tables and columns 
+  * Drop is used to delete tables and columns  <br>
 
 --
-.highlight[`DROP`] `TABLE tablename;`
+.highlight[`DROP`] `TABLE tablename;` <br>
 
 --
-  * Delete is used to delete specific rows (records)
+  * Delete is used to delete specific rows (records) <br>
 
 .highlight[`DELETE`] `FROM table WHERE column = value`
 

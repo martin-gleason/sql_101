@@ -46,7 +46,7 @@ class: center, middle, inverse, title-slide
   * Spotify, iTunes, or analog
   
   * Favorite social network
-    * Facebook, twitter, tumblr, instagram, reddit, other...
+    * Facebook, twitter, tumblr, instagram, Reddit, other...
 ]
 
 .v-middle[.pull-right[![](../img/youcandoit.gif)]]
@@ -313,7 +313,7 @@ use note cards and sticky notes
   * **SQL Server:** Hugely popular with companies who use Microsoft products. 
     * What `JEMS` used and `cFive` WILL use
   
-  * **PostgreSQL:** Free, fast, and well supported by a community of developers
+  * **PostgreSQL:** Free, fast, and supported by a large community of developers
   
   * **SQLite:** Free, popular for tablets/phones. 
     * Use a single file structure where other products use multiple, interlinked files
@@ -362,7 +362,7 @@ Microsoft SQL Server Studio
 
 --
 
-  * Structured Query Langauge (SQL) is used for a number of database products. 
+  * Structured Query Language (SQL) is used for a number of database products. 
 
 --
   
@@ -377,7 +377,7 @@ Microsoft SQL Server Studio
 
   * We use mortality rates as a key performance indicator
   
-  * This data is publically available, which means we can use it and manipluate without fear of violating confidentiality
+  * This data is publicly available, which means we can use it and manipulate without fear of violating confidentiality
   
   * Tracking this data can help us develop interventions to prevent these fatalities
 ]
@@ -400,7 +400,7 @@ Microsoft SQL Server Studio
 - when a dead body is brought into a new medico-legal jurisdiction without proper medical certification
 
 ---
-#Dataset Facts
+#Data set Facts
 
   
 .pull-left[
@@ -491,7 +491,7 @@ Microsoft SQL Server Studio
 &lt;/tbody&gt;
 &lt;/table&gt;
 ---
-#Excercise #3: Getting Data into any System
+#Exercise #3: Getting Data into any System
 
 --
   * Forms
@@ -540,8 +540,8 @@ Microsoft SQL Server Studio
 ???
 * Create: Entries, tables, databases
 * Read: Read data
-* Update: Change entires, tables, databases
-* Delete: Remove entires, tables, 
+* Update: Change entries, tables, databases
+* Delete: Remove entries, tables, 
 
 ---
 # SQL Demo: Who wants to volunteer?
@@ -573,9 +573,9 @@ Microsoft SQL Server Studio
   * Box Four: Username and Password
 
 ???
-A port is the address to a specific kind of computer software. It's a communication endpoint -- where a variety of network traffic can/shoudl go.
+A port is the address to a specific kind of computer software. It's a communication endpoint -- where a variety of network traffic can/should go.
 
-MS SQL uses port 1433. Webdsites are usually 80. 
+MS SQL uses port 1433. Websites are usually 80. 
 
 ---
 #Create
@@ -601,9 +601,9 @@ MS SQL uses port 1433. Webdsites are usually 80.
 
 * **Datatypes:** Int, char, varchar, date, geospatial
 
-* **Constraints:** Keys, Can be Null, Autoupdating...
+* **Constraints:** Keys, Can be Null, Auto-updating...
 
-* **Logical Operators:** &gt;, &lt;, &gt;=, &lt;=, !, AND, OR, NOT
+* **Logical Operators:** `&gt;, &lt;, &gt;=, &lt;=, !, AND, OR, NOT`
 ---
 #Read Tables
 
@@ -622,12 +622,14 @@ MS SQL uses port 1433. Webdsites are usually 80.
 --
 * WHERE 
   * `SELECT * FROM table`
-.highlight[WHERE]`   column &gt;= value;`
+.highlight[WHERE]`   column `
+.highlight[`&gt;=`] ` value;`
 
 --
 * Logical Operators 
 
-`SELECT  table1.column1, table1.column2,` &lt;br&gt; `table2.column2,table3.column3 `
+`SELECT  table1.column1, table1.column2,` &lt;br&gt;
+`table2.column2,table3.column3 ` &lt;br&gt;
 `FROM table1, table2 ` &lt;br&gt;
 `WHERE table1.column1 = table2.column2` &lt;br&gt;
 .highlight[AND]  `table2.column3 = value;`
@@ -662,13 +664,13 @@ table &lt;br&gt;
 ---
 #Delete
 
-*Drop is used to delete tables and columns 
+  * Drop is used to delete tables and columns  &lt;br&gt;
 
 --
-.highlight[`DROP`] `TABLE tablename;`
+.highlight[`DROP`] `TABLE tablename;` &lt;br&gt;
 
 --
-*Delete is used to delete specific rows (records)
+  * Delete is used to delete specific rows (records) &lt;br&gt;
 
 .highlight[`DELETE`] `FROM table WHERE column = value`
 
