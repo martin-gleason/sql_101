@@ -497,15 +497,19 @@ table <br>
 ---
 #Delete
 
-  * Drop is used to delete tables and columns  <br>
-
+  * Drop is used to delete tables and columns <br> 
+<br>
 --
+
 .highlight[`DROP`] `TABLE tablename;` <br>
-
+<br>
 --
-  * Delete is used to delete specific rows (records) <br>
 
-.highlight[`DELETE`] `FROM table WHERE column = value`
+  * Delete is used to delete specific rows (records) <br>
+<br>
+--
+
+.highlight[`DELETE`] `FROM table WHERE column = value;`
 
 ---
 #Resources and Further Learning
