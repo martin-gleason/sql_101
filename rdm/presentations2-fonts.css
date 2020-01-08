@@ -1,18 +1,18 @@
 /* importing the following fonts: Nobile, lato. */
 
-@import url('https://fonts.googleapis.com/css?family=Nobile|Lato');
+@import url('https://fonts.googleapis.com/css?family=Nobile|Lato|Fira+Code');
 
 
 :root{
 	--blue: #193993;
   --grey: #9b9292;
   --black: #0e0705;
-  --green: #a5d3c1;
+  --green: #769319;
   --gold: #eebf48;
 }
 
 h1{
-	font-family: Lato, sans-serif;
+	font-family: 'Lato', sans-serif;
 	color: #193993;
 	font-size: 1.9em;
 	text-align: center;
@@ -22,7 +22,7 @@ h1{
 }
 
 h2{
-	font-family: Lato, sans-serif;
+	font-family: 'Lato', sans-serif;
 	color:   #193993;
 	font-size: 1.75em;
 	font-style: italic;
@@ -32,7 +32,7 @@ h2{
 }
 
 h3{
-font-family: Lato, sans-serif;
+font-family: 'Lato', sans-serif;
 	color: #193993; 
 	font-style: italic;
 	text-align: center;
@@ -42,7 +42,7 @@ font-family: Lato, sans-serif;
 }
 
 h4{
-font-family: Lato, sans-serif;
+font-family: 'Lato', sans-serif;
 	color: #193993; 
 	text-align: right;
 	font-size: .55em;
@@ -53,6 +53,16 @@ ul,ol,dl,p{
 	font-family: 'Nobile', sans-serif;
 	font-size: 1.5rem;
 	text-align: left;
+}
+
+a{
+	color: var(--green);
+	text-decoration: underline;
+	
+}
+
+.remark-inline-code {
+	font-family: 'Fira Code', monospace;
 }
 
 .highlight{

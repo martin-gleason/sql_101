@@ -186,7 +186,7 @@ use note cards and sticky notes
   * **SQL Server:** Hugely popular with companies who use Microsoft products. 
     * What `JEMS` used and `cFive` WILL use
   
-  * **PostgreSQL:** Free, fast, and well supported by a community of developers
+  * **PostgreSQL:** Free, fast, and supported by a large community of developers
   
   * **SQLite:** Free, popular for tablets/phones. 
     * Use a single file structure where other products use multiple, interlinked files
@@ -455,12 +455,14 @@ MS SQL uses port 1433. Websites are usually 80.
 --
 * WHERE 
   * `SELECT * FROM table`
-.highlight[WHERE]`   column >= value;`
+.highlight[WHERE]`   column `
+.highlight[`>=`] ` value;`
 
 --
 * Logical Operators 
 
-`SELECT  table1.column1, table1.column2,` <br> `table2.column2,table3.column3 `
+`SELECT  table1.column1, table1.column2,` <br>
+`table2.column2,table3.column3 ` <br>
 `FROM table1, table2 ` <br>
 `WHERE table1.column1 = table2.column2` <br>
 .highlight[AND]  `table2.column3 = value;`
@@ -495,13 +497,13 @@ table <br>
 ---
 #Delete
 
-*Drop is used to delete tables and columns 
+  * Drop is used to delete tables and columns 
 
 --
 .highlight[`DROP`] `TABLE tablename;`
 
 --
-*Delete is used to delete specific rows (records)
+  * Delete is used to delete specific rows (records)
 
 .highlight[`DELETE`] `FROM table WHERE column = value`
 
